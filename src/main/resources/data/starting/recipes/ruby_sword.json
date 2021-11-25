@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern":
+  [
+    " r ",
+    " r ",
+    " x "
+  ],
+  "key":
+  {
+    "x":
+    {
+      "item": "minecraft:stick"
+    },
+    "r":
+    {
+      "item": "starting:ruby"
+    }
+  },
+  "result":
+  {
+    "item": "starting:ruby_sword",
+    "count": 1
+  }
+}
