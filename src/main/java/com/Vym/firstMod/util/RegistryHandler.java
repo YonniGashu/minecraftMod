@@ -4,6 +4,7 @@ import com.Vym.firstMod.StartingMod;
 import com.Vym.firstMod.armor.ModArmorMaterial;
 import com.Vym.firstMod.blocks.BlockItemBase;
 import com.Vym.firstMod.blocks.RubyBlock;
+import com.Vym.firstMod.blocks.RubyOre;
 import com.Vym.firstMod.items.ItemBase;
 import com.Vym.firstMod.items.MeltingCheese;
 import com.Vym.firstMod.tools.ModItemTier;
@@ -29,10 +30,14 @@ public class RegistryHandler {
 
      //Items
      public static final RegistryObject<Item> RUBY = ITEMS.register("ruby", ItemBase::new);
+
      public static final RegistryObject<MeltingCheese> MELTING_CHEESE = ITEMS.register("melting_cheese", MeltingCheese::new);
 
      //Blocks
      public static final RegistryObject<Block> RUBY_BLOCK = BLOCKS.register("ruby_block", RubyBlock::new);
+
+     public static final RegistryObject<Block> RUBY_ORE = BLOCKS.register("ruby_ore", RubyOre::new);
+
      //Tools
      public static final RegistryObject<SwordItem> RUBY_SWORD = ITEMS.register("ruby_sword", () ->
              new SwordItem(ModItemTier.RUBY, 2, -2.4F, new Item.Properties().group(StartingMod.TAB)));
@@ -46,4 +51,6 @@ public class RegistryHandler {
 
      //Block Items
      public static final RegistryObject<Item> RUBY_BLOCK_ITEM = ITEMS.register("ruby_block", () -> new BlockItemBase(RUBY_BLOCK.get()));
+
+     public static final RegistryObject<Item> RUBY_ORE_ITEM = ITEMS.register("ruby_ore", () -> new BlockItemBase(RUBY_ORE.get()));
 }
