@@ -2,5 +2,6 @@
   "item.starting.ruby": "Ruby",
   "item.starting.tanned_leather": "Tanned Leather",
   "block.starting.ruby_block": "Block of Ruby",
-  "itemGroup.startingTab": "Modded Items"
+  "itemGroup.startingTab": "Modded Items",
+  "item.starting.ruby_sword": "Ruby Sword"
 }
