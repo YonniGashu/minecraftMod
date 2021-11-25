@@ -19,8 +19,8 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 
 public class RegistryHandler {
-    public static final DeferredRegister<Item> ITEMS = new DeferredRegister<>(ForgeRegistries.ITEMS, StartingMod.MOD_ID);
-    public static final DeferredRegister<Block> BLOCKS = new DeferredRegister<>(ForgeRegistries.BLOCKS, StartingMod.MOD_ID);
+    public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, StartingMod.MOD_ID);
+    public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, StartingMod.MOD_ID);
 
     public static void init() {
         ITEMS.register(FMLJavaModLoadingContext.get().getModEventBus());
@@ -29,7 +29,6 @@ public class RegistryHandler {
 
      //Items
      public static final RegistryObject<Item> RUBY = ITEMS.register("ruby", ItemBase::new);
-     public static final RegistryObject<Item> TANNED_LEATHER = ITEMS.register("tanned_leather", ItemBase::new);
      public static final RegistryObject<MeltingCheese> MELTING_CHEESE = ITEMS.register("melting_cheese", MeltingCheese::new);
 
      //Blocks
