@@ -19,10 +19,12 @@ public class StartingMod
     private static final Logger LOGGER = LogManager.getLogger();
     public static final String MOD_ID = "starting";
 
-    public StartingMod() {FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
+    public StartingMod() {
+        FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::doClientStuff);
 
         RegistryHandler.init();
+
         MinecraftForge.EVENT_BUS.register(this);
             }
 
