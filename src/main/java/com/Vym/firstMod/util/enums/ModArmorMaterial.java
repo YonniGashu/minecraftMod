@@ -1,7 +1,7 @@
-package com.Vym.firstMod.armor;
+package com.Vym.firstMod.util.enums;
 
 import com.Vym.firstMod.StartingMod;
-import com.Vym.firstMod.util.RegistryHandler;
+import com.Vym.firstMod.init.ModItems;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.IArmorMaterial;
 import net.minecraft.item.crafting.Ingredient;
@@ -17,7 +17,7 @@ public enum ModArmorMaterial implements IArmorMaterial {
     // max Damage Factor = what u put times whatever number in the max damage array for that piece
 
     RUBY(StartingMod.MOD_ID + ":ruby", 25, new int[]{ 2, 5, 6, 2 }, 18,
-            SoundEvents.ITEM_ARMOR_EQUIP_GENERIC, 0.0F, () -> { return Ingredient.fromItems(RegistryHandler.RUBY.get()); }, 0);
+            SoundEvents.ITEM_ARMOR_EQUIP_GENERIC, 0.0F, () -> { return Ingredient.fromItems(ModItems.RUBY.get()); }, 0);
 
     private static final int[] MAX_DAMAGE_ARRAY = new int[] { 11, 16, 15, 13 };
     private final String name;

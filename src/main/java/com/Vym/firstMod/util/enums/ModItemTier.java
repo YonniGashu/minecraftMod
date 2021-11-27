@@ -1,6 +1,6 @@
-package com.Vym.firstMod.tools;
+package com.Vym.firstMod.util.enums;
 
-import com.Vym.firstMod.util.RegistryHandler;
+import com.Vym.firstMod.init.ModItems;
 import net.minecraft.item.IItemTier;
 import net.minecraft.item.crafting.Ingredient;
 
@@ -9,7 +9,7 @@ import java.util.function.Supplier;
 public enum ModItemTier implements IItemTier {
 
     RUBY(3, 820, 7.0F, 3.0F, 13, () -> {
-        return Ingredient.fromItems(RegistryHandler.RUBY.get());
+        return Ingredient.fromItems(ModItems.RUBY.get());
     });
 
     private final int harvestLevel;
