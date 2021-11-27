@@ -16,7 +16,7 @@ import java.util.stream.Collectors;
 @Mod("starting")
 public class StartingMod
 {
-    private static final Logger LOGGER = LogManager.getLogger();
+    public static final Logger LOGGER = LogManager.getLogger();
     public static final String MOD_ID = "starting";
 
     public StartingMod() {
