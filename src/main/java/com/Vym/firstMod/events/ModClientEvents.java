@@ -21,13 +21,13 @@ import net.minecraftforge.fml.common.Mod;
 @Mod.EventBusSubscriber(modid = StartingMod.MOD_ID, bus = Mod.EventBusSubscriber.Bus.FORGE, value = Dist.CLIENT)
 public class ModClientEvents {
 
-    @SubscribeEvent //LivingEntity#func_233580_cy_() ---> LivingEntity#getPosition()
+    @SubscribeEvent
     public static void onJumpWithStick(LivingEvent.LivingJumpEvent event) {
         LivingEntity plr = event.getEntityLiving();
         if (plr.getHeldItemMainhand().getItem() == Items.STICK) {
             StartingMod.LOGGER.info("Player tried to jump with a stick!");
             World world = plr.getEntityWorld();
-            world.setBlockState(plr.func_233580_cy_().add(0, -1, 0), ModBlocks.RUBY_BLOCK.get().getDefaultState());
+            world.setBlockState(plr.getPosition().add(0, -1, 0), ModBlocks.RUBY_BLOCK.get().getDefaultState());
         }
     }
 
