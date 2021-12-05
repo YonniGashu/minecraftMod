@@ -16,33 +16,34 @@ import net.minecraft.util.DamageSource;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.IWorldReader;
 import net.minecraft.world.World;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
 import javax.annotation.Nullable;
 
-public class FireBoarEntity extends AnimalEntity {
+public class IronHogEntity extends AnimalEntity {
 
     public static final Ingredient TEMPTATION_ITEMS = Ingredient.fromItems(Items.CARROT, Items.POTATO, Items.BEETROOT);
 
     private EatGrassGoal eatGrassGoal;
     private int hogTimer;
 
-    public FireBoarEntity(EntityType<? extends AnimalEntity> type, World worldIn) {
+    public IronHogEntity(EntityType<? extends AnimalEntity> type, World worldIn) {
         super(type, worldIn);
     }
 
     public static AttributeModifierMap.MutableAttribute setCustomAttributes() {
         return MobEntity.registerAttributes()
                 .createMutableAttribute(Attributes.MAX_HEALTH, 12.0D)
-                .createMutableAttribute(Attributes.MOVEMENT_SPEED, 0.25D);
+                .createMutableAttribute(Attributes.MOVEMENT_SPEED, 0.25D)
+                .createMutableAttribute(Attributes.FOLLOW_RANGE, 16);
     }
 
     @Override
     protected void registerGoals() {
         super.registerGoals();
+        this.eatGrassGoal = new EatGrassGoal(this);
         this.goalSelector.addGoal(0, new SwimGoal(this));
         this.goalSelector.addGoal(1, new PanicGoal(this, 1.25D));
         this.goalSelector.addGoal(2, new BreedGoal(this, 1.0D));
@@ -85,7 +86,7 @@ public class FireBoarEntity extends AnimalEntity {
     @Nullable
     @Override
     public AgeableEntity createChild(AgeableEntity ageable) {
-        return ModEntityTypes.BOAR.get().create(this.world);
+        return ModEntityTypes.IRON_HOG.get().create(this.world);
     }
 
     @Override
@@ -110,5 +111,4 @@ public class FireBoarEntity extends AnimalEntity {
             super.handleStatusUpdate(id);
         }
     }
-
 }

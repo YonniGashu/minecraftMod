@@ -7,5 +7,6 @@
   "itemGroup.startingTab": "Modded Items",
   "item.starting.ruby_sword": "Ruby Sword",
   "item.starting.ruby_pickaxe": "Ruby Pickaxe",
-  "item.starting.ruby_helmet": "Ruby Helmet"
+  "item.starting.ruby_helmet": "Ruby Helmet",
+  "entity.starting.iron_hog" : "Iron Hog"
 }

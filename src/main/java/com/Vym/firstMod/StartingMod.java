@@ -1,6 +1,6 @@
 package com.Vym.firstMod;
 
-import com.Vym.firstMod.entities.FireBoarEntity;
+import com.Vym.firstMod.entities.IronHogEntity;
 import com.Vym.firstMod.init.ModBlocks;
 import com.Vym.firstMod.init.ModEntityTypes;
 import com.Vym.firstMod.init.ModItems;
@@ -29,13 +29,14 @@ public class StartingMod
 
         ModBlocks.BLOCKS.register(FMLJavaModLoadingContext.get().getModEventBus());
         ModItems.ITEMS.register(FMLJavaModLoadingContext.get().getModEventBus());
+        ModEntityTypes.ENTITY_TYPES.register(FMLJavaModLoadingContext.get().getModEventBus());
 
         MinecraftForge.EVENT_BUS.register(this);
     }
 
     private void setup(final FMLCommonSetupEvent event) {
         DeferredWorkQueue.runLater(() ->{
-            GlobalEntityTypeAttributes.put(ModEntityTypes.BOAR.get(), FireBoarEntity.setCustomAttributes().create());
+            GlobalEntityTypeAttributes.put(ModEntityTypes.IRON_HOG.get(), IronHogEntity.setCustomAttributes().create());
         });
     }
 

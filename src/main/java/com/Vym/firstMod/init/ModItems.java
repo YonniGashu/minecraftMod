@@ -15,8 +15,6 @@ public class ModItems {
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, StartingMod.MOD_ID);
 
     //ITEMS
-
-
     public static final RegistryObject<Item> RUBY = ITEMS.register("ruby", ItemBase::new);
 
     public static final RegistryObject<MeltingCheese> MELTING_CHEESE = ITEMS.register("melting_cheese", MeltingCheese::new);
