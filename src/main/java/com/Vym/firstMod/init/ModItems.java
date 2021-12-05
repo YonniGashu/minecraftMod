@@ -3,6 +3,7 @@ package com.Vym.firstMod.init;
 import com.Vym.firstMod.StartingMod;
 import com.Vym.firstMod.items.ItemBase;
 import com.Vym.firstMod.items.MeltingCheese;
+import com.Vym.firstMod.items.ModSpawnEggItem;
 import com.Vym.firstMod.util.enums.ModArmorMaterial;
 import com.Vym.firstMod.util.enums.ModItemTier;
 import net.minecraft.inventory.EquipmentSlotType;
@@ -18,6 +19,9 @@ public class ModItems {
     public static final RegistryObject<Item> RUBY = ITEMS.register("ruby", ItemBase::new);
 
     public static final RegistryObject<MeltingCheese> MELTING_CHEESE = ITEMS.register("melting_cheese", MeltingCheese::new);
+
+    public static final RegistryObject<ModSpawnEggItem> IRON_HOG_SPAWN_EGG = ITEMS.register("iron_hog_spawn_egg",
+            () -> new ModSpawnEggItem(ModEntityTypes.IRON_HOG, 0xF1BF7B, 0x705128, new Item.Properties().group(StartingMod.TAB)));
 
     //TOOLS
     public static final RegistryObject<SwordItem> RUBY_SWORD = ITEMS.register("ruby_sword",
